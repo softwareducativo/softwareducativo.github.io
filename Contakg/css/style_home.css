@@ -1,0 +1,72 @@
+body{
+	background-color: #e3ebea;
+}
+
+.conteudo{
+	background-image: url("../img/bg_inicial.png");
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+
+	width: 800px;
+	height: 605.6px;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* ---------- BOTOES GENERICOS ---------- */
+.botao_home, .botao_ajuda{
+	float: right;
+	width: 64px;
+	height: 64px;
+	background-size: 100%;
+	margin-left: 10px;
+	color: transparent;
+}
+
+.botao_home{
+	background-image: url("../img/botoes/BotaoHome.png");
+}
+.botao_home:hover{
+	background-image: url("../img/botoes/BotaoHome__Hover.png");
+}
+
+.botao_ajuda{
+	background-image: url("../img/botoes/BotaoAjuda.png");
+}
+.botao_ajuda:hover{
+	background-image: url("../img/botoes/BotaoAjuda__Hover.png");
+}
+
+.botao-avancar{
+	color: transparent;
+	width: 165px;
+	height: 68.1px;
+	background-image: url("../img/botoes/BotaoAvancar.png");
+	background-size: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.botao-avancar:hover{
+	background-image: url("../img/botoes/BotaoAvancar_Hover.png");
+}
+
+/* ---------- HOME ---------- */
+#logo-home{
+	text-align: center;
+}
+
+#logo-home img{
+	max-width: 700px;
+	max-height: 500px;
+}
+
+/* ---------- PAGINA 3 ---------- */
+.balao-pag3 img{
+	max-height: 150px;
+}

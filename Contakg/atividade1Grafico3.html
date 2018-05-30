@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>Contaquilo</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
+		
+        <script type="text/javascript" src = "js/iniciar.js"></script>
+
+    </head>
+	<body>
+		<div class="conteudo">
+			<div class="row"> <!-- INICIO BOTOES SUPERIORES -->
+				<div class="col-md-9"></div>
+				<div class="col-md-3">
+					<a href="./index.html"><span class="botao_home" id="botaohome">Início</span></a>
+					<span class="botao_ajuda" id="botaoajuda">Ajuda</span>
+				</div>
+			</div> <!-- FIM BOTOES SUPERIORES -->
+
+			<!-- <canvas id="myChart" width="200" height="400"></canvas> -->
+            
+			<div class="row" style="margin-top: 50px;">
+				<!-- <div class="col-md-2"></div> -->
+				<div class="col-md-2"><img src="img/nutricionista/nutri1.png" style="margin-top: 155px;"/></div>
+				<div  class="col-md-6">
+					<canvas id="myChart" max-height="150px" style="max-height: 150px; background-color:white;"></canvas>
+					<img src="img/atividade_1/Atividade1_Pergunta3.png" style="margin-top:16px; margin-left:48px; max-width: 400px;">					
+				</div>
+				<div class="col-md-2 col-md-offset-1" style="padding: 10px; background-color: rgba(255,255,255,0.6); text-align: center; border-radius: 20px;">
+					<img class="foodCheck" alimento="chocolate" src="img/componentes/checkboxVazio.png" style="height: 32px;width: 32px; margin-right:8px; margin-bottom: 16px;"/>
+					<img src="img/alimentos/bolo2.png" style="height: 32px;width: 32px; margin-bottom: 16px;"/>
+					<br/>
+					<img class="foodCheck" alimento="maca" src="img/componentes/checkboxVazio.png" style="height: 32px;width: 32px; margin-right:8px; margin-bottom: 16px;"/>					
+					<img src="img/alimentos/maca1.png" style="height: 32px;width: 32px; margin-bottom: 16px;"/>
+					<br/>
+					<img class="foodCheck" alimento="pave" src="img/componentes/checkboxVazio.png" style="height: 32px;width: 32px; margin-right:8px; margin-bottom: 16px;"/>					
+					<img src="img/alimentos/pave.png" style="height: 32px;width: 32px; margin-bottom: 16px;"/>
+				</div>
+			</div>
+			
+			
+
+
+			<div class="row">
+				<div class="col-md-3" id="botao_voltar"><div class="botao-voltar" >Voltar</div></div>
+				<div class="col-md-3 col-md-offset-6" id="botao_avancar"><div class="botao-avancar" >Avançar</div></div>
+				<!-- Esse botão está visível, é pra tornar visível e fazer o clique na div acima ativar o clique dele. -->
+				<!-- LINK TEMPORARIO PARA PAGINA 3 -->
+				<!-- <br/> <br/> 
+				<a href="./pagina3.html">--------------------------------------------------------------------------------------------------------------------------------------------
+					PULAR A INTRODUÇÃO</a> -->
+			</div>
+
+		</div>
+		<!-- AQUI É A FUNÇÃO E O TEXTO DO BOTÃO DE AJUDA -->
+	<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#ajuda_modal" id="botao_aciona_modal_ajuda" style="display: none;"></button>
+
+	<div id="ajuda_modal" class="modal fade" role="dialog">
+  		<div class="modal-dialog modal-lg">
+
+    	<!-- Modal content-->
+    			<div class="modal-content">
+    				<div class="modal-header">
+    					<h2>Ajuda</h2>
+    				</div>
+      				<div class="modal-body">
+       	 				<p>Observe o gráfico. A coluna mais alta representa o alimento mais calórico. <br/>Marque a caixa correspondente a sua resposta e clique em avançar.</p>
+      				</div>
+      				<div class="modal-footer">
+		        		<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+      				</div>
+    			</div>
+
+  		</div>
+	</div>
+
+    <div id="error_modal" class="modal fade" role="dialog">
+		<div class="modal-dialog modal-lg">
+	
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div id="feedback-header" class="modal-header">
+                        <!-- cor de success 39b249 -->
+					<h3 class="col-md-10" style="border: 3px solid red; border-radius: 10px;">
+                        Veja novamente o gráfico para ter certeza da resposta correta.
+                    </h3>
+                    <div class="col-md-2">
+                            <img src="img/componentes/correct2.png" style="height: 32px; width: 32px; margin-top: 20px;"/>
+                    </div>
+                </div>
+				  <div id="feedback-btns" class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Tente novamente</button>
+				  </div>
+			</div>
+	
+	  </div>
+	</div>
+
+    <script type="text/javascript" src = "js/atividade1/questao3.js"></script>    
+	</body>
+</html>

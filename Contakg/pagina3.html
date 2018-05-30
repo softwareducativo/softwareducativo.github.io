@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>Contaquilo</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src = "js/iniciar.js"></script>
+	</head>
+	<body>
+		<div class="conteudo">
+			<div class="row"> <!-- INICIO BOTOES SUPERIORES -->
+				<div class="col-md-9"></div>
+				<div class="col-md-3">
+					<a href="./index.html"><span class="botao_home" id="botaohome">Início</span></a>
+					<span class="botao_ajuda" id="botaoajuda">Ajuda</span>
+				</div>
+			</div> <!-- FIM BOTOES SUPERIORES -->
+
+			<div class="row">
+				<div class="col-md-1"></div>
+				<div class="col-md-4 balao-pag3"><a href="atividade1.html"><img src="img/tela_2/balao_1.png" alt="Atividade 1"></a></div>
+				<div class="col-md-4 balao-pag3"><a href="atividade2.html"><img src="img/tela_2/balao_2.png" alt="Atividade 2"></a></div>
+			</div>
+			<div class="row">
+				<div class="col-md-3"></div>
+				<div class="col-md-3"><img src="img/nutricionista/nutri1.png"></div>
+				<div class="col-md-4 balao-pag3"><a href="atividade3.html"><img src="img/tela_2/balao_3.png" alt="Atividade 3"></a></div>
+			</div>
+		</div>
+
+
+		<!-- AQUI É A FUNÇÃO E O TEXTO DO BOTÃO DE AJUDA -->
+		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#ajuda_modal" id="botao_aciona_modal_ajuda" style="display: none;"></button>
+		
+
+		<div id="ajuda_modal" class="modal fade" role="dialog">
+  		<div class="modal-dialog modal-lg">
+
+    	<!-- Modal content-->
+    	<div class="modal-content">
+    		<div class="modal-header">
+    			<h2>Ajuda</h2>
+    		</div>
+      		<div class="modal-body">
+       	 		<p>Clique em um dos balões para selecionar a atividade que deseja realizar.</p>
+      		</div>
+      		<div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+      		</div>
+    	</div>
+	</body>
+</html>

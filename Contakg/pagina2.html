@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>Contaquilo</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src = "js/iniciar.js"></script>
+	</head>
+	<body>
+		<div class="conteudo">
+			<div class="row"> <!-- INICIO BOTOES SUPERIORES -->
+				<div class="col-md-9"></div>
+				<div class="col-md-3">
+					<a href="./index.html"><span class="botao_home" id="botaohome">Início</span></a>
+					<span class="botao_ajuda" id="botaoajuda">Ajuda</span>
+				</div>
+			</div> <!-- FIM BOTOES SUPERIORES -->
+
+			<div class="row" style="margin-top: 50px;">
+				<div class="col-md-2"></div>
+				<div class="col-md-2"><img src="img/nutricionista/nutri4.png" style="margin-top: 155px;"></div>
+				<div class="col-md-8"><img src="img/FalaTela2.png" alt="As crianças da escola Prof. Dennys Maia estão fazendo uma pesquisa para saber quais os alimentos preferidos dos seus colegas." style="max-width: 500px;" id="balao"></div>
+			</div>
+			
+			
+
+
+			<div class="row">
+				<div class="col-md-3 col-md-offset-9" id="botao_avancar1"><a href="./pagina3.html" style="text-decoration: none;">
+					<div class="botao-avancar" >Avançar</div></a></div>
+				<!-- Esse botão está visível, é pra tornar visível e fazer o clique na div acima ativar o clique dele. -->
+				<!-- <button class="botao1" onclick="document.getElementById('balao').src='img/atividade_1/FalaAtividade1_2.png'">CLIQUE AQUI (mudar pra display:none;) e vincular clique ao botao certo</button> -->
+
+			</div>
+
+		</div>
+
+		<!-- AQUI É A FUNÇÃO E O TEXTO DO BOTÃO DE AJUDA -->
+		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#ajuda_modal" id="botao_aciona_modal_ajuda" style="display: none;"></button>
+
+		<div id="ajuda_modal" class="modal fade" role="dialog">
+  		<div class="modal-dialog modal-lg">
+
+    	<!-- Modal content-->
+    	<div class="modal-content">
+    		<div class="modal-header">
+    			<h2>Ajuda</h2>
+    		</div>
+      		<div class="modal-body">
+       	 		<p>Esta é a introdução, clique em avançar para ir à pagina de seleção de atividades.</p>
+      		</div>
+      		<div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+      		</div>
+    	</div>
+
+  </div>
+</div>
+	</body>
+</html>

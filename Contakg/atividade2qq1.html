@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Contaquilo</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
+
+	<script type="text/javascript" src = "js/iniciar.js"></script>
+
+</head>
+<body>
+	<div class="conteudo">
+		<div class="row"> <!-- INICIO BOTOES SUPERIORES -->
+			<div class="col-md-9"></div>
+			<div class="col-md-3">
+				<a href="./index.html"><span class="botao_home" id="botaohome">Início</span></a>
+				<span class="botao_ajuda" id="botaoajuda">Ajuda</span>
+			</div>
+		</div> <!-- FIM BOTOES SUPERIORES -->
+
+		<!-- <canvas id="myChart" width="200" height="400"></canvas> -->
+
+		<div class="row" style="margin-top: 50px;">
+			<!-- <div class="col-md-2"></div> -->
+			<div class="col-md-2"><img src="img/nutricionista/nutri1.png" style="margin-top: 155px;"/></div>
+			<div  class="col-md-6">
+
+				<script type="text/javascript">
+					var refri = 0;
+					var biscoito = 0;
+					var iogurte = 0;
+					var maca = 0;
+					var pave = 0;
+				</script>
+
+				<script src ="https://www.gstatic.com/charts/loader.js"></script>
+				<script type="text/javascript">
+					
+					google.charts.load('current', {'packages':['bar']});
+					google.charts.setOnLoadCallback(drawChart);
+
+					function drawChart() {
+						var data = google.visualization.arrayToDataTable([
+							['Item', 'Votos'],
+							['Refrigerante', refri],
+							['Pave', pave],
+							['Biscoito', biscoito],
+							['iogurte', iogurte],
+							['maçã',maca]
+							]);
+
+						var options = {
+							animation:{
+								duration: 1000,
+								easing: 'out'
+							},
+							vAxis: {minValue:0, maxValue:10}
+						};
+
+						var chart = new google.charts.Bar(document.getElementById('myChart'));
+
+						chart.draw(data, google.charts.Bar.convertOptions(options));
+					}	
+					
+				</script>
+
+
+				<script type="text/javascript">
+					$(document).ready(function () {
+						$("#b1").click(function () {
+							if (refri<10){
+								refri+=1;
+								drawChart();
+							}
+						});
+						$("#b2").click(function () {
+							if (pave<10){
+								pave+=1;
+								drawChart();
+
+							}
+
+						});
+						$("#b3").click(function () {
+							if (biscoito<10){
+								biscoito+=1;
+								drawChart();
+
+							}
+
+						});
+						$("#b4").click(function () {
+							if (iogurte<10){
+								iogurte+=1;
+
+								drawChart();
+
+							}
+
+						});
+						$("#b5").click(function () {
+							if (maca<10){
+
+								maca+=1;
+
+								drawChart();
+
+							}
+
+						});
+					});
+
+				</script>
+
+				<div id="myChart" style="max-height: 500px; background-color:white;  border-radius: 15px;"></div>
+				<div class="row col-md-6 col-md-offset-3" style="background-color: white; border-radius: 15px; text-align: center; margin-top: 1em;"><a href="#" id="b1"><img src="img/alimentos/refri.png" style="max-width: 2em;"></a>  <a href="#" id="b2"><img src="img/alimentos/pave.png" style="max-width: 2em;"></a>  <a href="#" id="b3"><img src="img/alimentos/cookie.png" style="max-width: 2em;"></a>  <a href="#" id="b4"><img src="img/alimentos/iogurte.png" style="max-width: 2em;"></a>  <a href="#" id="b5"><img src="img/alimentos/maca1.png" style="max-width: 2em;"></a> </div>	
+
+			</div>
+			<div class="col-md-3" style="padding: 10px; background-color: rgba(255,255,255,0.6); text-align: center; border-radius: 20px;">
+				<table class="table-striped" style="width: 100%;">
+					<thead>
+						<th style="text-align: center;">Alimento</th>
+						<th style="text-align: center;">Votos</th>
+					</thead>
+					<tbody>
+
+						<script type="text/javascript">
+							$(document).ready(function () {
+								$("#valor_refri").append(Math.floor(Math.random() * (10 - 1)) + 1);
+								$("#valor_pave").append(Math.floor(Math.random() * (10 - 1)) + 1);
+								$("#valor_biscoito").append(Math.floor(Math.random() * (10 - 1)) + 1);
+								$("#valor_iog").append(Math.floor(Math.random() * (10 - 1)) + 1);
+								$("#valor_maca").append(Math.floor(Math.random() * (10 - 1)) + 1);
+
+
+							});
+						</script>
+
+						<tr>
+							<td>Refrigerante <span><img src="img/alimentos/refri.png" style="max-width: 1em;"></span></td>
+							<td id="valor_refri"></td>
+						</tr>
+						<tr>
+							<td>Pavê<span> <img src="img/alimentos/pave.png" style="max-width: 1em;"></span></td>
+							<td id="valor_pave"></td>
+						</tr>
+						<tr>
+							<td>Biscoito<span> <img src="img/alimentos/cookie.png" style="max-width: 1em;"></span></td>
+							<td id="valor_biscoito"></td>
+						</tr>
+						<tr>
+							<td>Iogurte<span> <img src="img/alimentos/iogurte.png" style="max-width: 1em;"></span></td>
+							<td id="valor_iog"></td>
+						</tr>
+						<tr>
+							<td>Maçã<span> <img src="img/alimentos/maca1.png" style="max-width: 1em;"></span></td>
+							<td id="valor_maca"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+<script type="text/javascript">
+	$('#botao_voltar').click(function(){
+                    history.go(-1);
+                });
+</script>
+		<div class="row">
+			<div class="col-md-3" id="botao_voltar"><div class="botao-voltar" >Voltar</div></div>
+			<script type="text/javascript">
+			</script>
+			<div class="col-md-3 col-md-offset-6" id="botao_avancar"><div class="botao-avancar" >Avançar</div></div>
+			<!-- Esse botão está visível, é pra tornar visível e fazer o clique na div acima ativar o clique dele. -->
+			<!-- LINK TEMPORARIO PARA PAGINA 3 -->
+				<!-- <br/> <br/> 
+				<a href="./pagina3.html">--------------------------------------------------------------------------------------------------------------------------------------------
+				PULAR A INTRODUÇÃO</a> -->
+			</div>
+
+		</div>
+
+
+		<!-- AQUI É A FUNÇÃO E O TEXTO DO BOTÃO DE AJUDA -->
+		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#ajuda_modal" id="botao_aciona_modal_ajuda" style="display: none;"></button>
+
+		<div id="ajuda_modal" class="modal fade" role="dialog">
+			<div class="modal-dialog modal-lg">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<h2>Ajuda</h2>
+					</div>
+					<div class="modal-body">
+						<p>Observe a tabela, cada alimento contém um valor de voto <br/>Clique nos ícones abaixo do gráfico, para inserí-los</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="error_modal" class="modal fade" role="dialog">
+			<div class="modal-dialog modal-lg">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div id="feedback-header" class="modal-header">
+						<!-- cor de success 39b249 -->
+						<h3 class="col-md-10" style="border: 3px solid red; border-radius: 10px;">
+							Veja novamente o gráfico para ter certeza da resposta correta.
+						</h3>
+						<div class="col-md-2">
+							<img src="img/componentes/correct2.png" style="height: 32px; width: 32px; margin-top: 20px;"/>
+						</div>
+					</div>
+					<div id="feedback-btns" class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Tente novamente</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<script type="text/javascript" src = "js/atividade2/questao1.js"></script>  
+
+
+		<script type="text/javascript">
+	
+</script>  
+	</body>
+	</html>
