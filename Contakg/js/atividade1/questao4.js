@@ -75,7 +75,7 @@
                  $('#feedback-header').empty();
                     $('#feedback-header').append(
                      '<h3 class="col-md-12">' +
-                     'O refrigerante é a bebida menos calórica. Dessa forma, a altura da coluna desse alimento é menor do que as outras, lembre-se que o alimento menos calórico nem sempre é mais saudável.' +
+                     'O refrigerante é a bebida menos calórica. Dessa forma, o tamanho da barra desse alimento é menor do que as outras, lembre-se que o alimento menos calórico nem sempre é mais saudável.' +
                      '</h3>');
                      $('#feedback-btns').empty();
                      $('#feedback-btns').append('<a id="btn-continuar" href="pagina3.html" class="btn btn-success">Continuar</a>')
@@ -135,7 +135,11 @@ var myChart = new Chart(ctx, {
                  beginAtZero:true
              }
          }]
-     }, responsive: true,
+     },title: {
+            display: true,
+            text: 'Calorias dos alimentos',
+            position: 'bottom'
+    }, responsive: true,
  maintainAspectRatio: false
  }
 });

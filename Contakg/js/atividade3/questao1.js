@@ -49,10 +49,13 @@
           ['Sobremesa',  variavel_sobremesa]// DE 1 A 50
         ]);
 
+        var options = {
+          title: 'Votação dos alunos'
+        };
 
         var chart = new google.visualization.PieChart(document.getElementById('myChart'));
 
-        chart.draw(data);
+        chart.draw(data, options);
       }
 
 

@@ -135,8 +135,12 @@ var myChart = new Chart(ctx, {
              ticks: {
                  beginAtZero:true
              }
-         }]
-     }, responsive: true,
+         }],
+     }, title: {
+            display: true,
+            text: 'Calorias dos alimentos',
+            position: 'bottom'
+    }, responsive: true,
  maintainAspectRatio: false
  }
 });
