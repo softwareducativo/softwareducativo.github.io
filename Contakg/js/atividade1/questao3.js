@@ -75,7 +75,7 @@
                  $('#feedback-header').empty();
                     $('#feedback-header').append(
                      '<h3 class="col-md-12">' +
-                     'O bolo de chocolate é o alimento mais calórico. Dessa forma, a altura da coluna desse alimento é maior do que as outras.' +
+                     'O bolo de chocolate é o alimento mais calórico. Dessa forma, o tamanho da barra desse alimento é maior do que as outras.' +
                      '</h3>');
                      $('#feedback-btns').empty();
                      $('#feedback-btns').append('<a id="btn-continuar" href="atividade1Grafico4.html" class="btn btn-success">Continuar</a>')

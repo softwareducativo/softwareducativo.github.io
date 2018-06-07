@@ -75,7 +75,7 @@
                  $('#feedback-header').empty();
                     $('#feedback-header').append(
                      '<h3 class="col-md-12">' +
-                     'O queijo é o alimento mais calórico mostrado no gráfico. Dessa forma, a altura da coluna relacionada ao queijo é maior do que todas as outras.' +
+                     'O queijo é o alimento mais calórico mostrado no gráfico. Dessa forma, o tamanho da barra relacionada ao queijo é maior do que todas as outras.' +
                      '</h3>');
                      $('#feedback-btns').empty();
                      $('#feedback-btns').append('<a id="btn-continuar" href="atividade1Grafico2.html" class="btn btn-success">Continuar</a>')

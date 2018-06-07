@@ -75,7 +75,7 @@
                  $('#feedback-header').empty();
                     $('#feedback-header').append(
                      '<h3 class="col-md-12">' +
-                     'O suco de laranja é o alimento menos calórico. Dessa forma, a altura da coluna desse alimento é menor do que as outras.' +
+                     'O suco de laranja é o alimento menos calórico. Dessa forma, o tamanho da barra desse alimento é menor do que as outras.' +
                      '</h3>');
                      $('#feedback-btns').empty();
                      $('#feedback-btns').append('<a id="btn-continuar" href="atividade1Grafico3.html" class="btn btn-success">Continuar</a>')

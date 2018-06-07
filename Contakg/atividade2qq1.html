@@ -60,7 +60,13 @@
 								duration: 1000,
 								easing: 'out'
 							},
-							vAxis: {minValue:0, maxValue:10},
+							vAxis: {
+								title: 'Quantidade',
+								viewWindow:{
+          							max:10,
+          							min:0
+      							}, ticks: [2,4,6,8,10]
+							},
 							title:'Gráfico de votação dos alunos',
 							titlePosition: 'none'
 						};
@@ -114,14 +120,64 @@
 								drawChart();
 
 							}
+						});
+						$("#b1-minus").click(function () {
+							if (refri>0){
+								refri-=1;
+								drawChart();
+							}
+						});
+						$("#b2-minus").click(function () {
+							if (pave>0){
+								pave-=1;
+								drawChart();
 
+							}
+
+						});
+						$("#b3-minus").click(function () {
+							if (biscoito>0){
+								biscoito-=1;
+								drawChart();
+
+							}
+
+						});
+						$("#b4-minus").click(function () {
+							if (iogurte>0){
+								iogurte-=1;
+
+								drawChart();
+
+							}
+
+						});
+						$("#b5-minus").click(function () {
+							if (maca>0){
+
+								maca-=1;
+
+								drawChart();
+
+							}
 						});
 					});
 
 				</script>
 
 				<div id="myChart" style="max-height: 500px; background-color:white;  border-radius: 15px;"></div>
-				<div class="row col-md-6 col-md-offset-3" style="background-color: white; border-radius: 15px; text-align: center; margin-top: 1em;"><a href="#" id="b1"><img src="img/alimentos/refri.png" style="max-width: 2em;"></a>  <a href="#" id="b2"><img src="img/alimentos/pave.png" style="max-width: 2em;"></a>  <a href="#" id="b3"><img src="img/alimentos/cookie.png" style="max-width: 2em;"></a>  <a href="#" id="b4"><img src="img/alimentos/iogurte.png" style="max-width: 2em;"></a>  <a href="#" id="b5"><img src="img/alimentos/maca1.png" style="max-width: 2em;"></a> </div>	
+				<div class="row col-md-6 col-md-offset-3" style="background-color: white; border-radius: 15px; text-align: center; margin-top: 1em;">
+					<a href="#" id="b1"><img src="img/alimentos/refri.png" style="max-width: 2em;"></a>  
+					<a href="#" id="b2"><img src="img/alimentos/pave.png" style="max-width: 2em;"></a>  
+					<a href="#" id="b3"><img src="img/alimentos/cookie.png" style="max-width: 2em;"></a>  
+					<a href="#" id="b4"><img src="img/alimentos/iogurte.png" style="max-width: 2em;"></a>  
+					<a href="#" id="b5"><img src="img/alimentos/maca1.png" style="max-width: 2em;"></a>
+					<a href="#" id="b1-minus"><img src="img/componentes/minus.png" style="max-width: 2em;"></a>  
+					<a href="#" id="b2-minus"><img src="img/componentes/minus.png" style="max-width: 2em;"></a>  
+					<a href="#" id="b3-minus"><img src="img/componentes/minus.png" style="max-width: 2em;"></a>  
+					<a href="#" id="b4-minus"><img src="img/componentes/minus.png" style="max-width: 2em;"></a>  
+					<a href="#" id="b5-minus"><img src="img/componentes/minus.png" style="max-width: 2em;"></a> 
+				</div>	
 
 			</div>
 			<div class="col-md-3" style="padding: 10px; background-color: rgba(255,255,255,0.6); text-align: center; border-radius: 20px;">
@@ -164,6 +220,7 @@
 							<td>Maçã<span> <img src="img/alimentos/maca1.png" style="max-width: 1em;"></span></td>
 							<td id="valor_maca"></td>
 						</tr>
+
 					</tbody>
 				</table>
 			</div>
