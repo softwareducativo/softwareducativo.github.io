@@ -26,4 +26,25 @@ $(document).ready(function () {
 	$("#botaoajuda").click(function () {
 		$("#botao_aciona_modal_ajuda").trigger("click");
 	});	
+	
+	$("button").click(function(){
+		playClick();		
+	});
+	
+	
+	playTheme();
+
 });
+
+function playTheme() {
+	var pathAudio = "sounds/theme.wav";	
+	var audio = new Audio(pathAudio);
+	audio.loop = true;
+	audio.play();
+}
+
+function playClick() {
+	var pathAudio = "sounds/click.wav";
+	var audio = new Audio(pathAudio);
+	audio.play();
+}
