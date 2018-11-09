@@ -1,0 +1,29 @@
+﻿{
+	"version": 1541788684,
+	"fileList": [
+		"data.js",
+		"c2runtime.js",
+		"jquery-2.1.1.min.js",
+		"offlineClient.js",
+		"images/bg_play-sheet0.png",
+		"images/bt_play-sheet0.png",
+		"images/bg_fases-sheet0.png",
+		"images/fase1-sheet0.png",
+		"images/fase2-sheet0.png",
+		"images/fase3-sheet0.png",
+		"images/fase4-sheet0.png",
+		"images/bg_fase-sheet0.png",
+		"images/bt_voltar-sheet0.png",
+		"images/img_fase1-sheet0.png",
+		"images/marcador1-sheet0.png",
+		"images/sairpergunta-sheet0.png",
+		"images/bg_feedback-sheet0.png",
+		"images/bt_continuar-sheet0.png",
+		"icon-16.png",
+		"icon-32.png",
+		"icon-114.png",
+		"icon-128.png",
+		"icon-256.png",
+		"loading-logo.png"
+	]
+}
