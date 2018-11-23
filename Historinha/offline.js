@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1541788684,
+	"version": 1543004787,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -14,11 +14,14 @@
 		"images/fase4-sheet0.png",
 		"images/bg_fase-sheet0.png",
 		"images/bt_voltar-sheet0.png",
+		"images/bt_voltar-sheet1.png",
 		"images/img_fase1-sheet0.png",
-		"images/marcador1-sheet0.png",
 		"images/sairpergunta-sheet0.png",
 		"images/bg_feedback-sheet0.png",
 		"images/bt_continuar-sheet0.png",
+		"images/cursor_seta-sheet0.png",
+		"images/bg_pergunta.png",
+		"images/box_perguntas-sheet0.png",
 		"icon-16.png",
 		"icon-32.png",
 		"icon-114.png",
