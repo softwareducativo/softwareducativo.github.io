@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1543004787,
+	"version": 1544636821,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -22,6 +22,7 @@
 		"images/cursor_seta-sheet0.png",
 		"images/bg_pergunta.png",
 		"images/box_perguntas-sheet0.png",
+		"images/estudante-sheet0.png",
 		"icon-16.png",
 		"icon-32.png",
 		"icon-114.png",
