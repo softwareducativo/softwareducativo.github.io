@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1544793547,
+	"version": 1544795980,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -12,6 +12,11 @@
 		"images/relogio-sheet1.png",
 		"images/relogio-sheet2.png",
 		"images/bt_stop-sheet0.png",
+		"images/sprite-sheet0.png",
+		"images/sprite2-sheet0.png",
+		"images/tiledbackground.png",
+		"images/tiledbackground2.png",
+		"images/bt_restart2-sheet0.png",
 		"icon-16.png",
 		"icon-32.png",
 		"icon-114.png",
