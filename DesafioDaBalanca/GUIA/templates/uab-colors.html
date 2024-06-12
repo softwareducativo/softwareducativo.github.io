@@ -1,0 +1,64 @@
+<!-- Primary Colors -->
+<style>
+  .uab-md-primary {
+    background-color: {{$ctrl.colors.primary.hex}};
+  }
+  .uab-md-primary-light{
+    background-color: rgba({{$ctrl.colors.primary.value.concat(0.10).join(',')}});
+  }
+  .uab-md-accent {
+    background-color: {{$ctrl.colors.accent.hex}};
+  }
+  .uab-md-accent-light{
+    background-color: rgba({{$ctrl.colors.accent.value.concat(0.10).join(',')}});
+  }
+  .uab-box-primary{
+    border-color: {{$ctrl.colors.primary.hex}};
+  }
+  .uab-box-accent{
+    border-color: {{$ctrl.colors.accent.hex}};
+  }
+</style>
+
+<!-- Plyr -->
+
+<style>
+  .plyr__progress--played, .plyr__volume--display{
+    color: {{$ctrl.colors.accent.hex}};
+  }
+  .plyr--video .plyr__controls button.tab-focus:focus, .plyr--video .plyr__controls button:hover{
+    background: {{$ctrl.colors.accent.hex}};
+  }
+  .plyr--audio .plyr__controls button.tab-focus:focus, .plyr--audio .plyr__controls button:hover{
+    background: {{$ctrl.colors.accent.hex}};
+  }
+  .plyr__play-large{
+    background: {{$ctrl.colors.accent.hex}};
+  }
+  .plyr input[type="range"]:active::-webkit-slider-thumb{
+    background: {{$ctrl.colors.accent.hex}};
+  }
+
+  .plyr input[type="range"]:active::-moz-range-thumb{
+    background: {{$ctrl.colors.accent.hex}};
+  }
+
+  .plyr input[type="range"]:active::-ms-thumb{
+    background: {{$ctrl.colors.accent.hex}};
+  }
+</style>
+
+
+<!-- Table -->
+<style>
+  .table-hover > tbody > tr:hover{
+    background-color: rgba({{ $ctrl.colors.primary.value.concat(0.15).join(',') }});
+  }
+
+  .table thead.destacado > tr{
+    background-color: {{$ctrl.colors.primary.hex}};
+  }
+  .table thead.destacado > tr th, .table thead.destacado > tr th{
+    color: white;
+  }
+</style>

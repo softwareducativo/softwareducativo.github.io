@@ -1,0 +1,30 @@
+<md-sidenav
+    class="md-sidenav-right"
+    md-component-id="uab-annotations"
+    md-is-locked-open="$ctrl.$annotations.visible"
+    md-whiteframe="8">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h4 flex>Comentários</h4>
+      <md-button class="md-icon-button" ng-click="$ctrl.toggle()">
+        <md-icon md-font-icon="icon-close" class="icon-24"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <!-- <md-content layout-padding flex>
+    <div class="comment">
+      <div ta-bind ng-model="$ctrl.comment"></div>
+    </div>
+  </md-content> -->
+  <footer layout="column" flex>
+      <md-input-container flex>
+        <text-angular ng-model="$ctrl.comment" ta-toolbar="$ctrl.taToolbar" aria-label="Inserir novo Comentário"></text-angular>
+      </md-input-container>
+      <div layout="row" layout-align="end center">
+        <md-button ng-click="$ctrl.sendComment()">
+          Salvar Comentário
+          <md-icon md-font-icon="icon-send icon-24 margin-left"></md-icon>
+        </md-button>
+      </div>
+  </footer>
+</md-sidenav>

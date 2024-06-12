@@ -1,0 +1,55 @@
+<md-toolbar>
+  <div class="container" layout="row" layout-align="start center" flex>
+    <uab-header-titles flex>
+      <md-icon class='uab-course-icon' md-svg-src="{{$root.$global.manifest.academico.cursoIcone}}" ></md-icon>
+      <span class="separador-titulo"></span>
+      <div class="separador-subtitulo">
+        <div class="subtitle">{{$root.$global.manifest.academico.disciplina}}</div>
+        <div class="titles">
+          <small class="caption">{{$root.$global.manifest.nome}}</small>
+        </div>
+      </div>
+    </uab-header-titles>
+  </div>
+
+  <div class="md-toolbar-tools">
+    <div class="container-fluid" flex>
+      <md-button class="md-icon-button" ng-click="$ctrl.toggleSidenav()" ng-if="!$root.$mdMedia('gt-sm')">
+        <md-tooltip>Tópicos</md-tooltip>
+        <md-icon md-font-icon="icon-list"></md-icon>
+      </md-button>
+
+      <uab-pagination></uab-pagination>
+
+      <md-button class="md-icon-button" ng-click="$ctrl.increaseText()">
+        <md-tooltip>Aumentar Fonte</md-tooltip>
+        <md-icon md-font-icon="icon-increase"></md-icon>
+      </md-button>
+
+      <md-button class="md-icon-button" ng-click="$ctrl.decreaseText()">
+        <md-tooltip>Diminuir Fonte</md-tooltip>
+        <md-icon md-font-icon="icon-decrease"></md-icon>
+      </md-button>
+
+      <md-button class="md-icon-button" ng-click="$ctrl.toggleHightContrast()">
+        <md-tooltip>Inverter Cores</md-tooltip>
+        <md-icon md-font-icon="icon-invert_colors"></md-icon>
+      </md-button>
+
+      <md-button class="md-icon-button" ng-href="{{$root.$global.manifest.pdf}}" target="_blank">
+        <md-tooltip>Versão Impressa</md-tooltip>
+        <md-icon md-font-icon="icon-print"></md-icon>
+      </md-button>
+
+      <!-- <md-button class="md-icon-button" ng-click="$ctrl.toggleAplayer()">
+        <md-tooltip>Audio Aula</md-tooltip>
+        <md-icon md-font-icon="" ng-class="$ctrl.AplayerPlaying ? 'icon-pause_circle_outline' : 'icon-play_circle_outline'"></md-icon>
+      </md-button> -->
+      <span flex></span>
+
+      <span class="md-toolbar-tools-text">{{($root.$global.current_topic.position + 1)}} de {{ $root.$global.manifest.topicos.length }} páginas</span>
+
+      <span flex="5"></span>
+    </div>
+  </div>
+</md-toolbar>
