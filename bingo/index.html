@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo Educativo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 40px 20px;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            color: #7f8c8d;
+            margin-bottom: 40px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 15px 25px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            width: 60%;
+            margin: 0 auto;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn-teacher {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .btn-student {
+            background-color: #3498db;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            .btn {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bingo Educativo</h1>
+            <p>Uma forma divertida de aprender!</p>
+        </header>
+
+        <div class="button-container">
+            <button id="teacher-btn" class="btn btn-teacher">Professor</button>
+            <button id="student-btn" class="btn btn-student">Aluno</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Adicionando ações para os botões
+        document.getElementById('teacher-btn').addEventListener('click', function() {
+            window.location.href = 'teacher.html'; // Redireciona para a página do professor
+        });
+
+        document.getElementById('student-btn').addEventListener('click', function() {
+            window.location.href = 'student.html'; // Redireciona para a página do aluno
+        });
+    </script>
+</body>
+</html>

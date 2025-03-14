@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela do Professor</title>
+    <link rel="stylesheet" href="teacher.css">
+</head>
+<body>
+    <a href="index.html" class="btn-back">Voltar</a>
+    <div class="container">
+        <header>
+            <h1>Bingo - Professor</h1>
+            <p>Use o botão abaixo para sortear um número.</p>
+        </header>
+        
+        
+        <div ><h1>Número sorteado: </h1><span id="current-number" class="number" >00</span></div>
+
+        <div class="buttons-container">
+            <button id="generate-btn" class="btn btn-generate">Gerar Número</button>
+        </div>
+
+        <div id="bingo-numbers" class="numbers-container">
+            <!-- Os números sorteados serão exibidos aqui -->
+        </div>
+        <div class="buttons-container">
+            <button id="reset-btn" class="btn btn-reset">Resetar Números</button>
+        </div>
+    </div>
+
+    <script src="teacher.js"></script>
+</body>
+</html>
