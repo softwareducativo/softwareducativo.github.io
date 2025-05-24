@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Jogo de Matemática</title>
+    <style>
+        body { font-family: Arial; text-align: center; margin-top: 50px; }
+        #question { font-size: 24px; margin-bottom: 20px; }
+        .option { display: block; margin: 10px auto; padding: 10px 20px; font-size: 18px; cursor: pointer; }
+        #timer, #score, #progress { font-size: 18px; margin: 10px; }
+        #ranking { margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<h1>Jogo de Matemática</h1>
+<div id="question"></div>
+<div id="options"></div>
+<div id="progress"></div>
+<div id="timer"></div>
+<div id="score"></div>
+<button onclick="startGame()">Iniciar/Reiniciar</button>
+
+<div id="ranking">
+    <h2>Ranking</h2>
+    <ol id="rankingList"></ol>
+</div>
+
+<script>
+let currentQuestion = 0;
+let score = 0;
+let timer = 90;
+let interval;
+
+function generateRandomQuestion() {
+    const operations = ['+', '-', '*', '/'];
+    const op = operations[Math.floor(Math.random() * operations.length)];
+    let a, b, correct;
+
+    switch(op) {
+        case '+':
+            a = Math.floor(Math.random() * 21);
+            b = Math.floor(Math.random() * 21);
+            correct = a + b;
+            break;
+        case '-':
+            a = Math.floor(Math.random() * 21);
+            b = Math.floor(Math.random() * (a + 1));
+            correct = a - b;
+            break;
+        case '*':
+            a = Math.floor(Math.random() * 11);
+            b = Math.floor(Math.random() * 11);
+            correct = a * b;
+            break;
+        case '/':
+            b = Math.floor(Math.random() * 10) + 1;
+            correct = Math.floor(Math.random() * 11);
+            a = correct * b;
+            break;
+    }
+
+    const questionText = `Quanto é ${a} ${op} ${b}?`;
+    const options = [correct];
+    while (options.length < 3) {
+        let option = correct + Math.floor(Math.random() * 11 - 5);
+        if (!options.includes(option) && option >= 0) {
+            options.push(option);
+        }
+    }
+    options.sort(() => Math.random() - 0.5);
+
+    return { question: questionText, options, correct };
+}
+
+function showQuestion() {
+    if (currentQuestion >= 10) {
+        clearInterval(interval);
+        saveScore();
+        alert(`Fim do jogo! Sua pontuação: ${score}`);
+        return;
+    }
+
+    document.getElementById('progress').innerText = `Questão ${currentQuestion + 1} de 10`;
+    const q = generateRandomQuestion();
+    document.getElementById('question').innerText = q.question;
+    const opts = document.getElementById('options');
+    opts.innerHTML = '';
+
+    q.options.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.innerText = opt;
+        btn.className = 'option';
+        btn.onclick = () => checkAnswer(opt, q.options[q.correct]);
+        opts.appendChild(btn);
+    });
+}
+
+function checkAnswer(selected, correct) {
+    if (selected == correct) {
+        score++;
+    }
+    currentQuestion++;
+    document.getElementById('score').innerText = `Pontuação: ${score}`;
+    showQuestion();
+}
+
+function startGame() {
+    currentQuestion = 0;
+    score = 0;
+    timer = 90;
+    document.getElementById('score').innerText = `Pontuação: ${score}`;
+    document.getElementById('timer').innerText = `Tempo restante: ${timer}s`;
+    showQuestion();
+    clearInterval(interval);
+    interval = setInterval(() => {
+        timer--;
+        document.getElementById('timer').innerText = `Tempo restante: ${timer}s`;
+        if (timer <= 0) {
+            clearInterval(interval);
+            saveScore();
+            alert(`Tempo esgotado! Sua pontuação: ${score}`);
+        }
+    }, 1000);
+}
+
+function saveScore() {
+    let ranking = JSON.parse(localStorage.getItem('ranking')) || [];
+    ranking.push(score);
+    ranking.sort((a, b) => b - a);
+    ranking = ranking.slice(0, 5);
+    localStorage.setItem('ranking', JSON.stringify(ranking));
+    displayRanking();
+}
+
+function displayRanking() {
+    const ranking = JSON.parse(localStorage.getItem('ranking')) || [];
+    const list = document.getElementById('rankingList');
+    list.innerHTML = '';
+    ranking.forEach((s, i) => {
+        const li = document.createElement('li');
+        li.innerText = `${i + 1}º - ${s} pontos`;
+        list.appendChild(li);
+    });
+}
+
+displayRanking();
+</script>
+
+</body>
+</html>
