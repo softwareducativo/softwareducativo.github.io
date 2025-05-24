@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Jogo de Ciências - Seres Vivos</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #f0f8ff; text-align: center; }
+    .hidden { display: none; }
+    .container { margin-top: 30px; }
+    select { margin: 5px; padding: 5px; }
+    button { padding: 10px 15px; margin: 10px; border: none; background: #4CAF50; color: white; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #45a049; }
+    #mensagemFinal { font-weight: bold; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+  <h1>Jogo dos Seres Vivos</h1>
+
+  <div class="container">
+    <p>Escolha um ser vivo:</p>
+    <button onclick="selecionar('Borboleta')">Borboleta</button>
+    <button onclick="selecionar('Cogumelo')">Cogumelo</button>
+    <button onclick="selecionar('Cacto')">Cacto</button>
+  </div>
+
+  <div id="info-section" class="hidden">
+    <h2>Você escolheu: <span id="serVivo"></span></h2>
+
+    <label>Onde ele vive?</label>
+    <select id="ondeVive">
+      <option value="">Selecione</option>
+      <option value="florestas">Florestas</option>
+      <option value="solo_umido">Solo úmido</option>
+      <option value="desertos">Desertos</option>
+    </select><br>
+
+    <label>Como ele se alimenta?</label>
+    <select id="comoAlimenta">
+      <option value="">Selecione</option>
+      <option value="nectar">Néctar</option>
+      <option value="materia_organica">Matéria orgânica</option>
+      <option value="fotossintese">Fotossíntese</option>
+    </select><br>
+
+    <label>Como ele se reproduz?</label>
+    <select id="comoReproduz">
+      <option value="">Selecione</option>
+      <option value="ovos">Ovos</option>
+      <option value="esporos">Esporos</option>
+      <option value="sementes">Sementes</option>
+    </select><br>
+
+    <label>Qual o papel dele no ecossistema?</label>
+    <select id="papel">
+      <option value="">Selecione</option>
+      <option value="polinizacao">Polinização</option>
+      <option value="reciclagem">Reciclagem de nutrientes</option>
+      <option value="oxigenio">Produção de oxigênio</option>
+    </select><br>
+
+    <button onclick="verificarRespostas()">Verificar Respostas</button>
+    <button id="btnContinuar" class="hidden" onclick="continuarJogo()">Continuar</button>
+  </div>
+
+  <div id="resultado-final">
+    <p id="mensagemFinal"></p>
+    <p id="pontos"></p>
+  </div>
+
+  <button onclick="reiniciarJogo()">Reiniciar Jogo</button>
+  <canvas id="confettiCanvas" class="hidden"></canvas>
+
+  <script>
+    let pontuacao = 0;
+
+    const respostasCorretas = {
+      "Borboleta": {
+        ondeVive: "florestas",
+        comoAlimenta: "nectar",
+        comoReproduz: "ovos",
+        papel: "polinizacao"
+      },
+      "Cogumelo": {
+        ondeVive: "solo_umido",
+        comoAlimenta: "materia_organica",
+        comoReproduz: "esporos",
+        papel: "reciclagem"
+      },
+      "Cacto": {
+        ondeVive: "desertos",
+        comoAlimenta: "fotossintese",
+        comoReproduz: "sementes",
+        papel: "oxigenio"
+      }
+    };
+
+    function selecionar(serVivo) {
+      document.getElementById("serVivo").textContent = serVivo;
+      document.getElementById("info-section").classList.remove("hidden");
+      document.getElementById("mensagemFinal").textContent = "";
+      document.getElementById("pontos").textContent = "";
+    }
+
+    function verificarRespostas() {
+      const ser = document.getElementById("serVivo").textContent;
+      const ondeVive = document.getElementById("ondeVive").value;
+      const comoAlimenta = document.getElementById("comoAlimenta").value;
+      const comoReproduz = document.getElementById("comoReproduz").value;
+      const papel = document.getElementById("papel").value;
+
+      const respostas = respostasCorretas[ser];
+
+      let pontos = 0;
+      if (respostas.ondeVive === ondeVive) pontos++;
+      if (respostas.comoAlimenta === comoAlimenta) pontos++;
+      if (respostas.comoReproduz === comoReproduz) pontos++;
+      if (respostas.papel === papel) pontos++;
+
+      pontuacao += pontos;
+
+      const mensagem = document.getElementById("mensagemFinal");
+      const pontosEl = document.getElementById("pontos");
+      const btnContinuar = document.getElementById("btnContinuar");
+
+      if (pontos === 4) {
+        mensagem.textContent = "🎉 Parabéns! Todas as respostas estão corretas!";
+        btnContinuar.classList.remove("hidden");
+        mostrarConfetes();
+      } else {
+        mensagem.textContent = `🔍 Você acertou ${pontos} de 4 respostas.`;
+        btnContinuar.classList.remove("hidden");
+      }
+
+      pontosEl.textContent = `Pontuação total: ${pontuacao}`;
+    }
+
+    function continuarJogo() {
+      document.getElementById("info-section").classList.add("hidden");
+      document.getElementById("ondeVive").value = "";
+      document.getElementById("comoAlimenta").value = "";
+      document.getElementById("comoReproduz").value = "";
+      document.getElementById("papel").value = "";
+      document.getElementById("btnContinuar").classList.add("hidden");
+      document.getElementById("mensagemFinal").textContent = "Escolha outro ser vivo para continuar!";
+    }
+
+    function reiniciarJogo() {
+      pontuacao = 0;
+      document.getElementById("info-section").classList.add("hidden");
+      document.getElementById("mensagemFinal").textContent = "";
+      document.getElementById("pontos").textContent = "";
+      document.getElementById("serVivo").textContent = "";
+      document.getElementById("btnContinuar").classList.add("hidden");
+    }
+
+    function mostrarConfetes() {
+      const canvas = document.getElementById("confettiCanvas");
+      canvas.classList.remove("hidden");
+      setTimeout(() => {
+        canvas.classList.add("hidden");
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
